@@ -1,0 +1,30 @@
+package com.test.begin.di3;
+
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+//		Hong hong = new Hong();
+//		
+//		//service.java에서 생성자 버전
+//		Service service = new Service(hong);
+//		service.work();
+		
+		
+		//service.java 에서 setter 버젼
+//		Service service = new Service();
+//		service.setHong(hong);
+//		service.work();
+		
+		//2. 스프링을 통해서 생성 > 빈 생성
+		//- di3.xml 환경 설정을 읽어오기
+		new ClassPathXmlApplicationContext("file:/src/main/java/com/test/begin/di3/.xml");
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mybatis">
+	
+	<insert id="m1">
+		insert into tblAddress values (seqAddress.nextVal, '홍길동', 20, '서울시', 'm')
+	</insert>
+	
+	<delete id="m2" parameterType="String"><!-- MyBatisDAOImpl의 m2 -->
+		delete from tblAddress where seq = #{seq}
+	</delete>
+	
+	<!-- key값만 적으면 알아서 꺼내온다. -->
+	<insert id="m3" parameterType="java.util.HashMap"><!-- 꼭 플네임 패키지로 지정해서 넣어줘야 한다. -->
+		insert into tblAddress values (seqAddress.nextVal, ${name}, ${age}, ${address}, ${gender})
+	</insert>
+	
+</mapper>

@@ -1,0 +1,11 @@
+127.0.0.1 - - [14/May/2024:10:12:21 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [14/May/2024:10:12:21 +0900] "GET /java/WEB-INF/classes/com/test/java/HomeController.java HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [14/May/2024:10:13:37 +0900] "GET /java/WEB-INF/classes/com/test/java/HomeController.java HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [14/May/2024:10:13:37 +0900] "GET /favicon.ico HTTP/1.1" 404 818
+0:0:0:0:0:0:0:1 - - [14/May/2024:10:13:48 +0900] "GET /java/WEB-INF/classes/com/test/java/HomeController.java HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [14/May/2024:10:14:00 +0900] "GET /java HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/May/2024:10:14:00 +0900] "GET /java/ HTTP/1.1" 200 170
+127.0.0.1 - - [14/May/2024:10:16:22 +0900] "GET / HTTP/1.1" 404 807
+0:0:0:0:0:0:0:1 - - [14/May/2024:10:16:22 +0900] "GET /java/WEB-INF/views/home.jsp HTTP/1.1" 404 721
+0:0:0:0:0:0:0:1 - - [14/May/2024:10:16:27 +0900] "GET /java HTTP/1.1" 302 -
+0:0:0:0:0:0:0:1 - - [14/May/2024:10:16:27 +0900] "GET /java/ HTTP/1.1" 200 169

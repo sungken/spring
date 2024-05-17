@@ -1,0 +1,22 @@
+package com.test.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.test.web.service.BoardService;
+
+@Controller
+public class Ex10Controller {
+	
+	@GetMapping(value="/add.do")
+	public String add(String message) {
+		
+		BoardService service = new BoardService();
+		
+		service.add(message);
+		
+		return "ex10";
+	}
+
+}

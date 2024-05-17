@@ -1,0 +1,13 @@
+package com.test.web.controller;
+
+// JSP Model2(MVC패턴)
+//- Controller
+//- View
+//- Model
+
+
+
+
+public class Ex01Controller {
+
+}

@@ -1,0 +1,46 @@
+package com.test.web.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+import com.test.web.service.BoardService;
+
+
+/*
+	
+	스프링 의존 주입
+	1. 필드 주입, Field Injection
+	2. Setter 주입
+	3. 생성자 주입
+	
+	
+*/
+
+
+@Controller
+public class Ex10Controller {
+	
+	private BoardService service;
+	
+//	@Autowired
+//	public void setService(BoardService service) {
+//		this.service = service;
+//	}
+	
+	public Ex10Controller(BoardService service) {
+		this.service = service;
+	}
+	
+	@GetMapping(value="/addBoard.do")
+	public String add(String message) {
+		
+		//BoardService service = new BoardService();
+		
+		service.add(message);
+		
+		return "ex10";
+	}
+
+}

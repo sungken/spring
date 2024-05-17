@@ -1,0 +1,13 @@
+package com.test.web.connect;
+
+public class Lee {
+	
+	
+	public String get(String thing) {
+		
+
+		
+		return thing;
+	}
+	
+}

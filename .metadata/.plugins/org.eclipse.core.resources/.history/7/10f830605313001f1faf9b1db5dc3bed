@@ -1,0 +1,13 @@
+package com.test.web.connect;
+
+public class Service {
+	
+	public void work() {
+		
+		Hong hong = new Hong();
+		String thing = hong.get("마우스");
+		System.out.println(thing);
+		
+	}
+	
+}

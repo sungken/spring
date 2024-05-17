@@ -1,0 +1,64 @@
+package com.test.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping(value="/ex05.do") //이렇게 하면 bean에서 name="/ex02.do"이런 형식의 이름을 대신해준다.
+public class Ex05Controller{
+	
+//	@RequestMapping
+//	public String ex05() {
+//		
+//		return "ex05"; //ex05 jsp에 리턴
+//	}
+	
+	
+	
+	// 이렇게 RequestMapping을 찾지 못하므로(중복) 에러가 난다.
+//	@RequestMapping 
+//	public String test() {
+//		
+//		return "ex05";
+//	}
+	
+	@RequestMapping(value="/ex05.do")
+	public String ex05() {
+		
+		return "ex05";
+	}
+	
+	
+	
+	
+	
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

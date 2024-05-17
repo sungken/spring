@@ -1,0 +1,13 @@
+package com.test.mybatis.dao;
+
+import java.util.Map;
+
+public interface MyBatisDAO {
+
+	void m1();
+
+	int m2(String seq);
+
+	int m3(Map<String, String> map);
+
+}

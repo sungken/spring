@@ -1,0 +1,44 @@
+package com.test.web.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+@RequestMapping(value="/ex05.do") //이렇게 하면 bean에서 name="/ex02.do"이런 형식의 이름을 대신해준다.
+public class Ex05Controller{
+	
+	@RequestMapping
+	public String ex05() {
+		
+		return "ex05"; 
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

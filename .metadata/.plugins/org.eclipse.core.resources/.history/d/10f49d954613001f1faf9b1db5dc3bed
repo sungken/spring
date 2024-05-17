@@ -1,0 +1,23 @@
+package com.test.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+
+// 스프링이 빈으로 관리하는 대상이 있는 곳 > component-scan base-package="com.test.web"
+
+
+@Controller
+public class Ex07Controller {
+	
+	//WARN : org.springframework.web.servlet.PageNotFound 
+	//- No mapping found for HTTP request with URI [/web/ex07.do] in DispatcherServlet with name 'appServlet'
+	@GetMapping("/ex07.do")
+	public String ex07() {
+		
+		
+		
+		return "ex07";
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.test.mybatis.dao;
+
+import org.springframework.stereotype.Service;
+
+@Service
+public class MyBatisDAOImpl implements MyBatisDAO{
+
+}

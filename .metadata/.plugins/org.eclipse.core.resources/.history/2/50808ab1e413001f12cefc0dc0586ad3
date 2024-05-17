@@ -1,0 +1,54 @@
+package com.test.web.service;
+
+import org.springframework.stereotype.Service;
+
+@Service  // bean으로 만들어 주기
+public class BoardService {
+
+	public void add(String message) {
+		System.out.println(message);
+	}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
