@@ -1,0 +1,61 @@
+스프링 다운
+
+https://github.com/spring-attic/toolsuite-distribution/wiki/Spring-Tool-Suite-3
+에서
+https://download.springsource.com/release/STS/3.9.18.RELEASE/dist/e4.21/spring-tool-suite-3.9.18.RELEASE-e4.21.0-win32-x86_64.zip
+다운
+
+
+sts-3.9.18.RELEASE
+만 사용 dev에 저장
+STS.ini 에서
+-startup
+plugins/org.eclipse.equinox.launcher_1.6.300.v20210813-1054.jar
+--launcher.library
+plugins/org.eclipse.equinox.launcher.win32.win32.x86_64_1.2.300.v20210828-0802
+-product
+org.springsource.sts.ide
+--launcher.defaultAction
+openFile
+-vm
+C:\class\dev\jdk11\bin\javaw.exe
+-vmargs
+-Dosgi.requiredJavaVersion=11
+-Dosgi.dataAreaRequiresExplicitInit=true
+-Xms256m
+-Xmx2048m
+--add-modules=ALL-SYSTEM
+-Dosgi.module.lock.timeout=10
+(롬복 설치하면 마지막에 롬복 추가됌)
+(-javaagent:C:\class\dev\sts-3.9.18.RELEASE\lombok.jar)
+
+톰캣
+apache-tomcat-9.0.XX 버젼 사용
+
+dev에서 터미널 열어서
+java -jar .\lombok-1.18.30.jar
+확인
+
+C:\class\code\spring\.metadata\.plugins\org.springsource.ide.eclipse.commons.content.core
+에서
+https-content.xml
+다운해서 넣고(이렇게 하면 스프링 에서 새프로젝트 Spring Legacy Project에서 하단 파일들이 나온다.)
+
+여기에
+C:\class\code\spring\.metadata\.sts\content\org.springframework.templates.mvc-3.2.2
+
+
+이제 스프링에서 
+Spring Legacy Project
+Spring MVC Project 실행
+
+환경설정
+- 인코딩
+	- 전부 UTF-8로 바꿔주기
+
+
+
+
+
+
+

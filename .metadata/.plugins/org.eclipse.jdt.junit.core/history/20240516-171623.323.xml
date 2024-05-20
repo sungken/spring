@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="JDBCTest" project="MyBatisTest" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="com.test.mybatis.persistence.JDBCTest" time="0.006">
-    <testcase name="testConnection" classname="com.test.mybatis.persistence.JDBCTest" time="0.006"/>
-  </testsuite>
-</testrun>
