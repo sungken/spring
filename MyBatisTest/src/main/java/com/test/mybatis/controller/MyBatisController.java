@@ -12,7 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.test.mybatis.dao.MyBatisDAO;
+import com.test.mybatis.dto.AddressDTO;
+import com.test.mybatis.dto.DetailDTO;
 import com.test.mybatis.dto.MyBatisDTO;
+import com.test.mybatis.dto.UserDTO;
 
 import lombok.RequiredArgsConstructor;
 
@@ -335,8 +338,87 @@ public class MyBatisController {
 	}
 
 
-
-
+	@GetMapping("/m19.do")
+	public String m19(Model model, UserDTO udto, DetailDTO ddto) {
+		
+		//다중 쿼리 > selectKey
+		//- mapper는 한번에 한개의 SQL만 실행 가능하다.
+		
+		//- tblUser   > 회원(기본정보)
+		//- tblDetail > 회원(추가정보)
+		
+		//- m19.do?name=홍길동&email=hong@test.com
+		//- m19.do?name=아무개&email=aaa@test.com
+		//- m19.do?name=강아지
+		
+//		dao.addUser(udto);
+//		String seq = dao.getSeq();
+//		ddto.setUser_seq(seq);
+//		dao.addDetail(ddto);
+		
+		
+		dao.addUser(udto);
+		ddto.setUser_seq(udto.getSeq());
+		dao.addDetail(ddto);
+		
+		//System.out.println(udto.getSeq());
+		
+		
+	
+		return "result";
+	}
+	
+	@GetMapping("/m20.do")
+	public String m20(Model model) {
+		
+		//Join 상황
+		// - 1:1 상황
+		
+		// Address + InfoDTO
+		// select * from tblAddress a inner join tblInfo i on a.seq = i.seq
+		
+		//방법 1. (dto가 너무 많아진다. 사용 x)
+		// AddressDTO + InfoDTO = 새로운 DTO만들기
+		
+		//방법 2.
+		// AddressDTO(InfoDTO)
+		
+		List<AddressDTO> jlist = dao.m20();
+		
+		model.addAttribute("jlist", jlist);
+		
+		return "result";
+	}
+	
+	@GetMapping("/m21.do")
+	public String m21(Model model) {
+		
+		//Join 상황
+		// - 1:1 상황
+		
+		//방법 3. (이걸 활용하기)
+		// AddressDTO(InfoDTO)
+		
+		List<AddressDTO> jlist = dao.m21();
+		
+		model.addAttribute("jlist", jlist);
+		
+		return "result";
+	}
+	
+	@GetMapping("/m22.do")
+	public String m22(Model model) {
+		
+		//Join 상황
+		//1:N
+		//tblAddress + tblMemo
+		
+		List<AddressDTO> mlist = dao.m22();
+		
+		model.addAttribute("mlist", mlist);
+		
+		return "result";		
+	}
 
 
 }//1 번

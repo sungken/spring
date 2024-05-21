@@ -290,9 +290,105 @@
 					#{item}
 				</foreach>
 			</where> 
+		</select>
+		
+		<!-- 회원 가입 -->
+		<insert id="addUser" parameterType="udto">
+		
+			<selectKey keyProperty="seq" order="BEFORE" resultType="String">
+				select seqUser.nextVal from dual
+			</selectKey>
+			
+			insert into tblUser values (#{seq}, #{name})
+			
+		</insert>
 
 		
+		<insert id="addDetail" parameterType="ddto">
+			insert into tblDetail values (seqDetail.nextVal, #{email}, #{user_seq})
+		</insert>
+	
+		<select id="getSeq" resultType="String">
+		
+			select max(seq) from tblUser
+			
 		</select>
+		
+		<!-- Join 1 : 1-->
+		<select id="m20" resultType="adto">
+		
+			select * from tblAddress
+			
+		</select>
+		
+		
+		<select id="m20_info" parameterType="String" resultType="idto">
+		
+			select * from tblInfo where seq = #{seq}
+		
+		</select>
+		
+		<!-- Join ***** -->
+		<resultMap type="idto" id="infoMap">
+			<id column="seq" property="seq" />
+			<result column="school" property="school" />
+			<result column="country" property="country" />
+		</resultMap>
+		
+		<resultMap type="adto" id="addressMap">
+			<!-- 
+				컬럼 매핑
+				id : PK용도
+				result : 일반 컬럼 용도
+			 -->
+			<id column="seq" property="seq" /><!-- column="seq"을 property="seq"에 옮겨서 넣어줘 라는 명령어 -->
+			<result column="name" property="name" /><!-- AddressDTO의 나머지 값을 넣기 -->
+			<result column="age" property="age" />
+			<result column="address" property="address" />
+			<result column="gender" property="gender" />
+			<association property="info" resultMap="infoMap"></association><!-- 1:1이면 association 사용 -->
+		</resultMap>
+		
+		<select id="m21" resultMap="addressMap"><!-- 연결해주는 resultMap을 쓴다.  -->
+			select 
+				* 
+			from tblAddress a
+				inner join tblInfo i
+					on a.seq = i.seq	
+		</select>
+		
+		<!-- Join 1 : N -->
+		<resultMap type="mdto" id="memoMap">
+		<id column="mseq" property="seq" />
+		<result column="memo" property="memo" />
+		<result column="regdate" property="regdate" />
+		<result column="aseq" property="aseq" />
+	</resultMap>
+	
+	<resultMap type="adto" id="addressMap2">
+		<id column="seq" property="seq" />
+		<result column="name" property="name" />
+		<result column="age" property="age" />
+		<result column="address" property="address" />
+		<result column="gender" property="gender" />
+		<collection property="memo" resultMap="memoMap"></collection><!-- 1:N이면 collection 사용 -->
+	</resultMap>
+	
+	<select id="m22" resultMap="addressMap2">
+		
+		select
+			a.*,
+			m.*,
+			m.seq as mseq
+		from tblAddress a
+			left outer join tblMemo m
+				on a.seq = m.aseq
+		
+	</select>
+
+
+			
+		
 
 </mapper>
 
