@@ -82,7 +82,7 @@ public class FileController {
 		return "addok";
 	}
 
-private String getFileName(String filename) {
+	private String getFileName(String filename) {
 		
 		//저장폴더 > 파일명 중복?
 		//filename = "test.txt"
@@ -158,6 +158,8 @@ private String getFileName(String filename) {
 	public String multi_addok(Model model, String txt, MultipartFile[] attach) {
 		
 		String path = servletContext.getRealPath("/resources/files");
+		System.out.println(path);
+		System.out.println(txt);
 		
 		for (MultipartFile file : attach) {
 			
