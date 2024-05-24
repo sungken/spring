@@ -1,7 +1,0 @@
-package com.test.web.connect;
-
-public class Worker {
-	
-	String get(String thing);
-	
-}

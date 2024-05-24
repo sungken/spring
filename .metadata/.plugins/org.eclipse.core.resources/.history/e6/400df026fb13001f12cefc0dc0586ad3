@@ -1,7 +1,0 @@
-package com.test.mybatis.dao;
-
-public interface MyBatisDAO {
-
-	void m1();
-
-}

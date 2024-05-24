@@ -1,9 +1,0 @@
-package com.test.web.service;
-
-public class BoardService {
-
-	public void add(String message) {
-		System.out.println(message);
-	}
-	
-}
