@@ -9,10 +9,10 @@
 	
 	
 	<!-- 403 처리 핸들러 -->
-	<bean id="customAccessDenied" class="com.test.security.auth.CustomAccessDeniedHandler"></bean>
+	<bean id="customAccessDenied" class="com.test.java.auth.CustomAccessDeniedHandler"></bean>
 	
 	<!-- 로그인 성공 처리 핸들러 -->
-	<bean id="customLoginSuccess" class="com.test.security.auth.CustomLoginSuccessHandler"></bean>
+	<bean id="customLoginSuccess" class="com.test.java.auth.CustomLoginSuccessHandler"></bean>
 	
 	<!-- PasswordEncoder -->
 	<!-- <bean id="customPasswordEncoder" class="com.test.security.auth.CustomNoOpPasswordEncoder"></bean> -->
@@ -21,7 +21,7 @@
 	<bean id="bcryptPasswordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder"></bean>
 	
 	<!-- 유저 정보 객체 -->
-	<bean id="customUserDetailsService" class="com.test.security.auth.CustomUserDetailsService"></bean>
+	<bean id="customUserDetailsService" class="com.test.java.auth.CustomUserDetailsService"></bean>
 	
 	
 	<!-- 16.
